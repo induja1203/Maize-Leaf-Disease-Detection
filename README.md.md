@@ -1,60 +1,35 @@
 Maize Leaf Disease Detection using Deep Learning :
-
-
-
 Project Overview :
-
 This project focuses on detecting and classifying maize (corn) leaf diseases using a deep learning approach inspired by YOLO architecture and enhanced with an attention mechanism.
 
 The model identifies four classes:
-
 * Common Rust
 * Gray Leaf Spot
 * Blight
 * Healthy
-
 The goal is to assist in early disease detection for improving crop health and agricultural productivity.
 
-
-
 Key Features :
-
 * Custom CNN inspired by YOLO detection framework
 * Integrated \*\*Triple Attention mechanism\*\* for better feature learning
 * Bounding box prediction for disease localization
 * Multi-class classification
 * Evaluation using accuracy, precision, recall, F1-score, and confusion matrix
 
-
-
 Model Architecture :
-
 The model consists of:
-
 1.Backbone
-
 \*Convolutional layers + BatchNorm + ReLU
-
 \*Integrated Triple Attention modules to enhance feature representation
-
-
-
 2.Head
-
 Fully connected layers
 
 Outputs:
-
 \* Objectness score
-
 \* Bounding box coordinates
-
 \* Class probabilities
 
-
-
 Technologies Used :
-
 * Python 
 * PyTorch
 * OpenCV
@@ -62,142 +37,59 @@ Technologies Used :
 * Matplotlib
 * Scikit-learn
 
-
-
 Project Structure :
-
-
-
 maize-leaf-disease-detection/
-
 │
-
-├── dataset/
-
-│   └── dataset\_info
-
-&#x20;    └──  sample\_images
-
-│
-
-├── models/
-
-│   └── maize\_leaf\_disease\_model (1).pth
-
-│
-
 ├── Maize\_Detection.ipynb
-
-│
-
 ├── README.md
-
 └──.gitignore
 
-
-
 Dataset :
-
-
-
-The dataset was annotated using Roboflow and follows YOLO format.
-
-Dataset is not included in this repository due to size limitations.
-
-
+The dataset was annotated using Roboflow and follows YOLO format.Dataset is not included in this repository due to size limitations.
 
 Dataset Preparation :
-
 1\. Download dataset from Roboflow or Kaggle further verify whether the dataset  is annotated or not if not kindly annotate using roboflow.
-
 2\. Upload the zip file inside the colab.
-
 3\. Run the code to extract automatically but i have used by mounting google drive, you can refer the notebook.
-
-
-
 import zipfile
-
 import os
-
 zip\_path = "dataset/preprocessed\_dataset.zip"
-
 extract\_path = "dataset/"
-
 if os.path.exists(zip\_path):
-
 &#x20;   with zipfile.ZipFile(zip\_path, 'r') as zip\_ref:
-
 &#x20;       zip\_ref.extractall(extract\_path)
-
 &#x20;   print("Dataset extracted successfully")
-
 else:
-
 &#x20;   print("Dataset zip not found.")
 
-
-
-
-
 Training :
-
 The model is trained using Custom YOLO-style loss function:
-
-
-
 * Objectness Loss
 * Bounding Box Loss
 * Classification Loss
 
-
-
 Evaluation Metrics :
-
-
-
 * Accuracy
 * Precision
 * Recall
 * F1 Score
 * Confusion Matrix
 
-
-
 Sample Output :
-
-
-
 Bounding boxes are drawn on infected regions. Class labels are displayed on detected areas. Refer Notebook
 
-
-
 How to Run ?
-
-
-
 1\. Clone or download the repository.
-
 2\. Open terminal/command prompt in the project folder.
-
+3\.Upload the dataset
 4\. Run the program: Maize\_Detection.ipynb
 
-
-
 Future Improvements :
-
-
-
 * Use full YOLOv9 architecture
 * Deploy as web/mobile app
 * Real-time detection using camera
 
-
-
 Conclusion :
-
-
-
 * This project demonstrates the application of deep learning techniques for automated maize leaf disease detection.
 * A custom CNN model inspired by YOLO was developed to perform both classification and localization tasks effectively.
 * The integration of a Triple Attention mechanism improved the model’s ability to focus on important features, leading to better performance in identifying disease patterns. 
